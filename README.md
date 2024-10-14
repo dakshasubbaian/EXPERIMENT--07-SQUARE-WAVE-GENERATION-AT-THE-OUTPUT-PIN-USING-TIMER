@@ -94,46 +94,81 @@ Step14. click on debug and simulate using simulation as shown below
  
 
   
+ 
 
 ## STM 32 CUBE PROGRAM :
-
+```
+MX_GPIO_Init();
+MX_TIM2_Init();
+{
+    HAL_TIM_Base_Start(&htim2);
+    HAL_TIM_PWM_Init(&htim2);
+    HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_1);
+}
+```
 
 
 
 
 ## Output screen shots of proteus  :
- 
+  ## AT 500:
+![280510220-273b4536-765d-461d-8b68-d5fee6b5dda3](https://github.com/user-attachments/assets/01428ed5-d9db-44f6-84e5-2bf9b7545d4f)
+
+
+  ## AT 700:
+![280510223-432d7a99-dc07-4a8d-b118-a412951d4463](https://github.com/user-attachments/assets/e6fd2854-c413-4b42-b9c1-def1681ce682)
+
+
+
+  ## AT 900:
+![280510226-2b089a7c-8c5a-4be1-ad65-73f713700948](https://github.com/user-attachments/assets/90e33be4-44c3-4318-8b44-25680c7f8b3c)
+
+  
+
+
+ ## Output screen shots of proteus : 
+![280509428-52bf1381-40e8-4065-8726-a964ed25f7d8](https://github.com/user-attachments/assets/7a627393-512f-4d88-894c-46990af016ea)
+
  
  ## CIRCUIT DIAGRAM (EXPORT THE GRAPHICS TO PDF AND ADD THE SCREEN SHOT HERE): 
- 
+![280509430-a5fb1917-ce98-4a36-9e72-0575abd64815](https://github.com/user-attachments/assets/ef4f6952-88b2-4c9d-b5b8-add497c72577)
+
+
 
 ## DUTY CYCLE AND FREQUENCY CALCULATION 
 FOR PULSE AT 500
-
-TON = 
-TOFF=
-TOTAL TIME = 
-FREQUENCY = 1/(TOTAL TIME)
+```
+ TON  = 2ms
+  TOFF = 2ms
+  TOTAL TIME = 4 
+  FREQUENCY = 1/(TOTAL TIME)
+            = 1/(410^-3)
+            = 250Hz
+```
 
 FOR PULSE AT 700
-
-TON = 
-TOFF=
-TOTAL TIME = 
+```
+TON  = 2.17ms
+TOFF = 0.93ms
+TOTAL TIME = 3.1 
 FREQUENCY = 1/(TOTAL TIME)
+          = 1/(3.110^-3)
+          = 322.58Hz
 
+```
 
 FOR PULSE AT 900
-
-TON = 
-TOFF=
-TOTAL TIME = 
+```
+TON  = 2.88ms
+TOFF = 0.32ms
+TOTAL TIME = 3.2 
 FREQUENCY = 1/(TOTAL TIME)
+          = 1/(3.210^-30
+          = 312.5Hz
 
-
+```
 ## Result :
-A PWM Signal is generated using the following frequency and various duty cycles are simulated 
-
+A PWM Signal is generated using the following frequency and various duty cycles are simulated.
 
 
 
